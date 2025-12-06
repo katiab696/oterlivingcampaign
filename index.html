@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Morning Ritual Workshop - Otér Living Campaign</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #F5F1E8;
+            --ivory: #FFFFF0;
+            --warm-grey: #B8B4A8;
+            --soft-taupe: #D4C5B9;
+            --charcoal: #3D3D3D;
+            --gold: #C9A668;
+            --sage: #9CAF88;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--ivory) 0%, var(--cream) 100%);
+            color: var(--charcoal);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px 60px 20px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(245,241,232,0.95));
+            border-bottom: 2px solid var(--gold);
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.5em;
+            font-weight: 300;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .workshop-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8em;
+            font-style: italic;
+            color: var(--gold);
+            margin: 20px 0 10px 0;
+        }
+
+        .tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2em;
+            font-style: italic;
+            color: var(--gold);
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5em;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin: 60px 0 30px 0;
+            border-bottom: 1px solid var(--soft-taupe);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8em;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin: 40px 0 20px 0;
+        }
+
+        .section {
+            background: white;
+            padding: 50px;
+            margin: 40px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .hero-workshop {
+            background: linear-gradient(135deg, var(--soft-taupe), var(--cream));
+            padding: 60px 50px;
+            border-radius: 12px;
+            border: 3px solid var(--gold);
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .workshop-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3em;
+            color: var(--charcoal);
+            margin-bottom: 20px;
+        }
+
+        .workshop-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .detail-box {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .detail-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .detail-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3em;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+        }
+
+        .quote-box {
+            background: var(--ivory);
+            border-left: 4px solid var(--gold);
+            padding: 35px;
+            margin: 30px 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4em;
+            font-style: italic;
+            color: var(--charcoal);
+        }
+
+        .session-card {
+            background: linear-gradient(135deg, var(--ivory), white);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border-left: 5px solid var(--sage);
+        }
+
+        .session-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5em;
+            color: var(--gold);
+            opacity: 0.5;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: white;
+            padding: 20px 50px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1em;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(201, 166, 104, 0.4);
+        }
+
+        .cta-button:hover {
+            background: var(--sage);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(156, 175, 136, 0.5);
+        }
+
+        .social-post {
+            background: white;
+            border: 2px solid var(--warm-grey);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .platform-tag {
+            display: inline-block;
+            background: var(--gold);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .caption {
+            font-size: 1.05em;
+            line-height: 1.9;
+            color: var(--charcoal);
+            margin: 20px 0;
+        }
+
+        .hashtags {
+            color: var(--sage);
+            font-size: 0.95em;
+            margin-top: 20px;
+        }
+
+        .checklist {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .checklist li {
+            padding: 18px 18px 18px 55px;
+            margin: 12px 0;
+            background: var(--cream);
+            border-radius: 8px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 18px;
+            color: var(--sage);
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+
+        th, td {
+            padding: 18px;
+            text-align: left;
+            border-bottom: 1px solid var(--warm-grey);
+        }
+
+        th {
+            background: var(--cream);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2em;
+            color: var(--charcoal);
+        }
+
+        .mood-board {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .mood-item {
+            background: var(--cream);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .mood-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5em;
+            color: var(--charcoal);
+            margin-bottom: 15px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gold);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 25px 0 25px 35px;
+            margin-bottom: 35px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -11px;
+            top: 30px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--sage);
+            border: 4px solid white;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            h2 {
+                font-size: 2em;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+
+            .workshop-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Morning Ritual</h1>
+        <p class="workshop-subtitle">A Fashion Psychology Workshop</p>
+        <p class="tagline">"Choose Your Armor. Choose Your Mood."</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- WORKSHOP OVERVIEW -->
+        <div class="hero-workshop">
+            <div class="workshop-title">Transform Your Mornings</div>
+            <p style="font-size: 1.2em; margin: 25px auto; max-width: 800px; line-height: 1.8;">
+                Join Otér Living for an intimate 2-hour workshop exploring the psychology behind your morning dressing ritual. Discover how the fabrics you choose, the colors you wear, and the intention you set each morning shape your confidence, mood, and performance throughout the day.
+            </p>
+            
+            <div class="workshop-details">
+                <div class="detail-box">
+                    <div class="detail-icon">📅</div>
+                    <div class="detail-label">When</div>
+                    <p>Saturday Mornings<br>9:00 AM - 11:00 AM</p>
+                </div>
+                
+                <div class="detail-box">
+                    <div class="detail-icon">📍</div>
+                    <div class="detail-label">Where</div>
+                    <p>Otér Living<br>Evanston, IL</p>
+                </div>
+                
+                <div class="detail-box">
+                    <div class="detail-icon">👥</div>
+                    <div class="detail-label">Group Size</div>
+                    <p>Limited to 12 participants<br>Intimate setting</p>
+                </div>
+                
+                <div class="detail-box">
+                    <div class="detail-icon">💰</div>
+                    <div class="detail-label">Investment</div>
+                    <p>$75 per person<br>Includes materials & refreshments</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- WHAT YOU'LL LEARN -->
+        <div class="section">
+            <h2>🌅 What You'll Experience</h2>
+            
+            <div class="quote-box">
+                "Every morning presents a choice. Not just what to wear, but how you want to feel. This workshop teaches you to dress with intention."
+            </div>
+
+            <div class="session-card">
+                <div class="session-number">Part 1</div>
+                <h3 style="margin-top: 10px;">The Psychology of Your Morning Ritual</h3>
+                <p style="font-size: 1.05em; margin-top: 15px; line-height: 1.8;">
+                    • Understand how morning routines impact your entire day<br>
+                    • Learn the science behind "enclothed cognition"<br>
+                    • Discover why what you wear affects how you think and feel<br>
+                    • Explore the connection between fabric, texture, and emotion
+                </p>
+            </div>
+
+            <div class="session-card">
+                <div class="session-number">Part 2</div>
+                <h3 style="margin-top: 10px;">The Sensory Bar Experience</h3>
+                <p style="font-size: 1.05em; margin-top: 15px; line-height: 1.8;">
+                    • Hands-on exploration of different fabrics and textures<br>
+                    • Learn which materials create which emotional states<br>
+                    • Touch, feel, and understand silk, cotton, lace, cashmere<br>
+                    • Discover your personal "mood palette" through tactile experience
+                </p>
+            </div>
+
+            <div class="session-card">
+                <div class="session-number">Part 3</div>
+                <h3 style="margin-top: 10px;">Building Your Intentional Morning Practice</h3>
+                <p style="font-size: 1.05em; margin-top: 15px; line-height: 1.8;">
+                    • Create a personalized morning dressing ritual<br>
+                    • Learn to "dress for the day you want to have"<br>
+                    • Practice choosing clothing based on desired emotional state<br>
+                    • Take home a custom morning ritual guide you've created
+                </p>
+            </div>
+
+            <div class="session-card">
+                <div class="session-number">Part 4</div>
+                <h3 style="margin-top: 10px;">Community Connection & Reflection</h3>
+                <p style="font-size: 1.05em; margin-top: 15px; line-height: 1.8;">
+                    • Share insights with fellow participants over coffee<br>
+                    • Discuss personal dressing challenges and discoveries<br>
+                    • Build community with like-minded women<br>
+                    • Connect intention to daily practice
+                </p>
+            </div>
+        </div>
+
+        <!-- WHO SHOULD ATTEND -->
+        <div class="section">
+            <h2>💫 Who Should Attend</h2>
+            
+            <p style="font-size: 1.15em; margin: 25px 0 30px 0;">This workshop is perfect for you if you:</p>
+            
+            <ul class="checklist">
+                <li>Want to understand the deeper connection between clothing and confidence</li>
+                <li>Are curious about fashion psychology and mindful living</li>
+                <li>Want to be more intentional about your daily rituals</li>
+                <li>Are interested in personal growth and self-awareness</li>
+                <li>Want to connect with other women exploring similar questions</li>
+                <li>Feel disconnected from your morning routine</li>
+            </ul>
+
+            <div class="quote-box" style="margin-top: 40px;">
+                "This isn't about fashion rules or trends. It's about understanding yourself and using clothing as a tool for emotional wellbeing and self-expression."
+            </div>
+        </div>
+
+        <!-- WHAT'S INCLUDED -->
+        <div class="section">
+            <h2>✨ What's Included</h2>
+            
+            <div class="mood-board">
+                <div class="mood-item">
+                    <div class="mood-title">Materials</div>
+                    <p>• Custom workbook & journal<br>
+                    • Fabric swatch samples to take home<br>
+                    • Morning ritual planning guide<br>
+                    • Resource list for continued learning</p>
+                </div>
+
+                <div class="mood-item">
+                    <div class="mood-title">Refreshments</div>
+                    <p>• Continental breakfast<br>
+                    • Coffee, tea, and juice bar<br>
+                    • Light pastries and fruit<br>
+                    • European café atmosphere</p>
+                </div>
+
+                <div class="mood-item">
+                    <div class="mood-title">Experience</div>
+                    <p>• Sensory Bar exploration<br>
+                    • Guided exercises<br>
+                    • Small group discussions<br>
+                    • Personal reflection time</p>
+                </div>
+
+                <div class="mood-item">
+                    <div class="mood-title">Community</div>
+                    <p>• Access to Otér Living community<br>
+                    • Ongoing workshop discounts<br>
+                    • Private Facebook group<br>
+                    • Monthly newsletter with tips</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SOCIAL MEDIA CAMPAIGN -->
+        <div class="section">
+            <h2>📱 Social Media Campaign Strategy</h2>
+
+            <h3>Instagram Feed Post - Launch Announcement</h3>
+
+            <style>
+                .instagram-container {
+                    max-width: 470px;
+                    width: 100%;
+                    background: white;
+                    border: 1px solid #dbdbdb;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+                    margin: 30px auto;
+                }
+
+                .post-header {
+                    display: flex;
+                    align-items: center;
+                    padding: 14px 16px;
+                    border-bottom: 1px solid #efefef;
+                }
+
+                .profile-pic {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    background: linear-gradient(135deg, #D4C5B9, #C9A668);
+                    margin-right: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-weight: 600;
+                    font-size: 14px;
+                }
+
+                .ig-username {
+                    font-weight: 600;
+                    font-size: 14px;
+                    color: #262626;
+                }
+
+                .post-image {
+                    width: 100%;
+                    aspect-ratio: 1/1;
+                    background: linear-gradient(135deg, #F5F1E8 0%, #FFFFF0 50%, #D4C5B9 100%);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 50px 30px;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .post-image::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="%23C9A668" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+                    opacity: 0.3;
+                }
+
+                .image-content {
+                    position: relative;
+                    z-index: 1;
+                    text-align: center;
+                }
+
+                .ig-post-title {
+                    font-family: 'Cormorant Garamond', serif;
+                    font-size: 2.6em;
+                    font-weight: 300;
+                    color: #3D3D3D;
+                    margin-bottom: 12px;
+                    letter-spacing: 1px;
+                    line-height: 1.3;
+                }
+
+                .ig-post-subtitle {
+                    font-family: 'Cormorant Garamond', serif;
+                    font-size: 1.2em;
+                    font-style: italic;
+                    color: #C9A668;
+                    margin-bottom: 25px;
+                }
+
+                .ig-post-tagline {
+                    font-family: 'Cormorant Garamond', serif;
+                    font-size: 1.4em;
+                    font-style: italic;
+                    color: #9CAF88;
+                    margin-bottom: 30px;
+                }
+
+                .ig-workshop-info {
+                    background: rgba(255,255,255,0.95);
+                    padding: 20px 25px;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+                    text-align: left;
+                    max-width: 320px;
+                    margin: 0 auto;
+                }
+
+                .ig-info-item {
+                    display: flex;
+                    align-items: center;
+                    margin: 10px 0;
+                    font-size: 0.95em;
+                    color: #3D3D3D;
+                }
+
+                .ig-info-icon {
+                    font-size: 1.2em;
+                    margin-right: 10px;
+                    width: 24px;
+                }
+
+                .post-actions {
+                    display: flex;
+                    padding: 12px 16px;
+                    gap: 16px;
+                    border-bottom: 1px solid #efefef;
+                }
+
+                .action-icon {
+                    font-size: 24px;
+                    cursor: pointer;
+                    color: #262626;
+                }
+
+                .post-likes {
+                    padding: 8px 16px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #262626;
+                }
+
+                .ig-post-caption {
+                    padding: 0 16px 16px 16px;
+                    font-size: 14px;
+                    line-height: 1.6;
+                    color: #262626;
+                }
+
+                .ig-username-bold {
+                    font-weight: 600;
+                    margin-right: 6px;
+                }
+
+                .ig-caption-text {
+                    display: inline;
+                }
+
+                .ig-hashtags {
+                    color: #00376b;
+                    margin-top: 8px;
+                    font-size: 13px;
+                    line-height: 1.5;
+                }
+
+                .post-time {
+                    padding: 0 16px 16px 16px;
+                    font-size: 10px;
+                    color: #8e8e8e;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+
+                @media (max-width: 600px) {
+                    .ig-post-title {
+                        font-size: 2.2em;
+                    }
+                    
+                    .ig-post-subtitle {
+                        font-size: 1.2em;
+                    }
+
+                    .ig-post-tagline {
+                        font-size: 1.3em;
+                    }
+
+                    .ig-workshop-info {
+                        padding: 20px;
+                    }
+                }
+            </style>
+
+            <div class="instagram-container">
+                <!-- Post Header -->
+                <div class="post-header">
+                    <div class="profile-pic">OL</div>
+                    <div class="ig-username">oterliving</div>
+                </div>
+
+                <!-- Post Image -->
+                <div class="post-image">
+                    <div class="image-content">
+                        <div class="ig-post-title">The Morning<br>Ritual</div>
+                        <div class="ig-post-subtitle">A Fashion Psychology Workshop</div>
+                        <div class="ig-post-tagline">"Choose Your Armor.<br>Choose Your Mood."</div>
+                        
+                        <div class="ig-workshop-info">
+                            <div class="ig-info-item">
+                                <span class="ig-info-icon">📅</span>
+                                <span>Saturday Mornings, 9-11am</span>
+                            </div>
+                            <div class="ig-info-item">
+                                <span class="ig-info-icon">📍</span>
+                                <span>Otér Living, Evanston</span>
+                            </div>
+                            <div class="ig-info-item">
+                                <span class="ig-info-icon">👥</span>
+                                <span>Limited to 12 women</span>
+                            </div>
+                            <div class="ig-info-item">
+                                <span class="ig-info-icon">💰</span>
+                                <span>$75 per person</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post Actions -->
+                <div class="post-actions">
+                    <span class="action-icon">♡</span>
+                    <span class="action-icon">💬</span>
+                    <span class="action-icon">✈</span>
+                </div>
+
+                <!-- Likes -->
+                <div class="post-likes">
+                    234 likes
+                </div>
+
+                <!-- Caption -->
+                <div class="ig-post-caption">
+                    <span class="ig-username-bold">oterliving</span>
+                    <span class="ig-caption-text">✨ NEW WORKSHOP ALERT ✨
+
+What if the fabric touching your skin shapes your entire day? What if your morning ritual is actually a powerful psychology tool?
+
+Introducing: THE MORNING RITUAL
+
+A 2-hour fashion psychology workshop where we explore the science behind intentional dressing. Learn how to choose your clothing based on the day you WANT to have.
+
+This isn't about fashion rules. It's about understanding yourself and using clothing as a tool for emotional wellbeing.
+
+Ready to transform your mornings? Link in bio to register. 🤍</span>
+                    
+                    <div class="ig-hashtags">
+#TheMorningRitual #OterLiving #FashionPsychology #EvanstonWorkshops #IntentionalLiving #MindfulDressing #WomenEmpowerment #PersonalGrowth #EvanstonEvents #ChicagoWorkshops
+                    </div>
+                </div>
+
+                <!-- Post Time -->
+                <div class="post-time">2 hours ago</div>
+            </div>
+
+
+        </div>
+
+        <!-- EMAIL CAMPAIGN -->
+
+            <div class="social-post">
+                <span class="platform-tag">Email 1: Announcement</span>
+                <p><strong>Subject:</strong> Introducing: The Morning Ritual Workshop ☕</p>
+                <p><strong>Send:</strong> 3 weeks before first workshop</p>
+                <div class="caption">
+                    Hi [Name],
+                    <br><br>
+                    What if the way you start your morning could change your entire day?
+                    <br><br>
+                    We're excited to introduce The Morning Ritual - a brand new 2-hour workshop at Otér Living that explores the fascinating psychology behind your daily dressing routine.
+                    <br><br>
+                    <strong>Workshop Details:</strong><br>
+                    📅 Saturday, [DATE], 9:00-11:00 AM<br>
+                    📍 Otér Living, Evanston<br>
+                    👥 Limited to 12 participants<br>
+                    💰 $75 (includes breakfast, materials, Sensory Bar experience)
+                    <br><br>
+                    [REGISTER NOW BUTTON]
+                </div>
+            </div>
+
+        </div>
+
+        <!-- VISUAL AESTHETIC -->
+        <div class="section">
+            <h2>🎨 Visual Aesthetic Guide</h2>
+
+            <h3>Photography Style</h3>
+            <div class="mood-board">
+                <div class="mood-item">
+                    <div class="mood-title">Setting</div>
+                    <p><strong>The Workshop Space</strong><br>
+                    • Warm, intimate community room<br>
+                    • String lights or soft lighting<br>
+                    • Beautiful table settings<br>
+                    • Coffee bar setup<br>
+                    • Sensory Bar displays</p>
+                </div>
+
+                <div class="mood-item">
+                    <div class="mood-title">Key Shots</div>
+                    <p><strong>Essential Images</strong><br>
+                    • Hands touching fabrics<br>
+                    • Coffee and journal together<br>
+                    • Women in discussion circles<br>
+                    • Workshop materials close-up<br>
+                    • Group moments, genuine connection</p>
+                </div>
+
+                <div class="mood-item">
+                    <div class="mood-title">Color Palette</div>
+                    <p><strong>Warm & Inviting</strong><br>
+                    • Cream, ivory, soft taupe<br>
+                    • Warm gold accents<br>
+                    • Sage green touches<br>
+                    • Natural wood tones<br>
+                    • Soft morning light</p>
+                </div>
+
+                <div class="mood-item">
+                    <div class="mood-title">Mood</div>
+                    <p><strong>European Café Salon</strong><br>
+                    • Intimate and welcoming<br>
+                    • Sophisticated but accessible<br>
+                    • Community-focused<br>
+                    • Warm and inviting<br>
+                    • Aspirational yet real</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
